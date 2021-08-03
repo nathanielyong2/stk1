@@ -1,7 +1,8 @@
 CREATE TABLE exch (
 	exch varchar(20),
 	exch_name varchar(50),
-	currency_code varchar(3)
+	currency_code varchar(3),
+    CONSTRAINT PK_exch PRIMARY KEY (exch)
 );
 
 CREATE TABLE stk_price_hist (

@@ -1,0 +1,9 @@
+select stk1, close_price1, close_price2, round(((close_price2-close_price1)/close_price1*100),1) pct_gain, vol2 vol2
+from
+	  (select stk stk1, close_price close_price1, volume vol1 from stk_price_hist where stk_date='20210101') data1,
+	  (select stk stk2, close_price close_price2, volume vol2 from stk_price_hist where stk_date='20210730') data2
+where data1.stk1=data2.stk2
+and vol2 > 10000000
+and stk2 in ('MSFT', 'AAPL', 'TSLA')
+order by 4 desc;
+
