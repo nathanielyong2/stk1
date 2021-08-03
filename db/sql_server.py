@@ -1,13 +1,12 @@
 import os
 import csv
 import pyodbc
+import socket
 
 rows = 0
-
-conn = pyodbc.connect('Driver={SQL Server};'
-                      'Server=LAPTOP-KHUTVNS5;'
-                      'Database=stocks;'
-                      'Trusted_Connection=yes;')
+server_name='Server=' + socket.gethostname() + ';'
+connect_string='Driver={SQL Server};' + server_name + 'Database=stocks;' + 'Trusted_Connection=yes;'
+conn = pyodbc.connect(connect_string)
 cursor = conn.cursor()
 
 basedir = os.path.abspath(os.path.dirname(__file__))
