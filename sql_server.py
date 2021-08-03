@@ -4,6 +4,7 @@ import pyodbc
 import socket
 
 rows = 0
+
 server_name='Server=' + socket.gethostname() + ';'
 connect_string='Driver={SQL Server};' + server_name + 'Database=stocks;' + 'Trusted_Connection=yes;'
 conn = pyodbc.connect(connect_string)
