@@ -10,7 +10,7 @@ conn = pyodbc.connect(connect_string)
 cursor = conn.cursor()
 
 basedir = os.path.abspath(os.path.dirname(__file__))
-path = os.path.abspath(os.path.join(basedir, '../..', 'NASDAQ_2021'))
+path = os.path.abspath(os.path.join(basedir, '..', 'stk_data'))
 
 for filename in os.listdir(path):
     file = os.path.join(path, filename)
