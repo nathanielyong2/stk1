@@ -2,6 +2,11 @@
 TODAY
 
 - load exch table - AMEX, NASDAQ, NYSE and TSX
+    NASDAQ      NASDAQ Stock Exchange	    USD
+    NYSE	    New York Stock Exchange	    USD
+    TSX	        Toronto Stock Exchange	    CAD
+    AMEX	    American Stock Exchange	    USD
+    
 - create foreign key constraint between exch and stk tables on column "exch"
 - all columns set to "NOT NULL"
 
