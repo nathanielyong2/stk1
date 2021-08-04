@@ -1,18 +1,20 @@
 CREATE TABLE exch (
-	exch varchar(20),
-	exch_name varchar(50),
-	currency_code varchar(3),
+	exch varchar(20) NOT NULL,
+	exch_name varchar(50) NOT NULL,
+	currency_code varchar(3) NOT NULL,
     CONSTRAINT PK_exch PRIMARY KEY (exch)
 );
 
 CREATE TABLE stk_price_hist (
-	exch varchar(20),
-	stk varchar(10),
-	stk_date varchar(8),
-	open_price decimal(10, 5),
-	high_price decimal(10, 5),
-	low_price decimal(10, 5),
-	close_price decimal(10, 5),
-	volume bigint,
-	CONSTRAINT PK_stk PRIMARY KEY (exch, stk, stk_date)
+	exch varchar(20) NOT NULL,
+	stk varchar(10) NOT NULL,
+	stk_date varchar(8) NOT NULL,
+	open_price decimal(10, 5) NOT NULL,
+	high_price decimal(10, 5) NOT NULL,
+	low_price decimal(10, 5) NOT NULL,
+	close_price decimal(10, 5) NOT NULL,
+	volume bigint NOT NULL,
+	CONSTRAINT PK_stk PRIMARY KEY (exch, stk, stk_date),
+	CONSTRAINT FK_exch FOREIGN KEY (exch)
+	REFERENCES exch(exch)
 ); 

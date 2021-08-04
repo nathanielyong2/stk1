@@ -1,5 +1,5 @@
 ---------------------------------------------------------------
-TODAY
+DONE
 
 - load exch table - AMEX, NASDAQ, NYSE and TSX
     NASDAQ      NASDAQ Stock Exchange	    USD
@@ -9,6 +9,9 @@ TODAY
     
 - create foreign key constraint between exch and stk tables on column "exch"
 - all columns set to "NOT NULL"
+
+---------------------------------------------------------------
+TODAY
 
 - get sqlcmd to connect to database and run sql scripts
 - load csv files for NYSE & TSX - see Slack channel 
