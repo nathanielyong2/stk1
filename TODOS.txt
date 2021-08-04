@@ -3,9 +3,11 @@ TODAY
 -----------------
 
 - Get sqlcmd to connect to database and run sql scripts - Andrew
-- Load csv files for NYSE zip file - Nate
-- Get and load TSX eoddata zip file - Andrew
+- Load csv files for NYSE zip file                      - Nate
+- Get eoddata zip file for TSX                          - Andrew
+- Use log to text file during load of stk data files    - Nate
 
+---------------
 - Study Udemy course on visualizing Python data
 
 
