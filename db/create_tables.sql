@@ -1,11 +1,23 @@
+print 'Set database'
+use stocks
+
+
+print 'Start : Create new tables'
+print '     --> Create table EXCH'
 CREATE TABLE exch (
 	exch varchar(20) NOT NULL,
 	exch_name varchar(50) NOT NULL,
 	currency_code varchar(3) NOT NULL,
     CONSTRAINT PK_exch PRIMARY KEY (exch)
 );
+print '     --> Create table STK'
+CREATE TABLE stk (
+	stk varchar(10) NOT NULL,
+	stk_name varchar(200) NOT NULL
+); 
 
-CREATE TABLE stk_price_hist (
+print '     --> Create table STK_PRICE'
+CREATE TABLE stk_price (
 	exch varchar(20) NOT NULL,
 	stk varchar(10) NOT NULL,
 	stk_date varchar(8) NOT NULL,
@@ -18,3 +30,5 @@ CREATE TABLE stk_price_hist (
 	CONSTRAINT FK_exch FOREIGN KEY (exch)
 	REFERENCES exch(exch)
 ); 
+
+print 'End   : Created new tables'
