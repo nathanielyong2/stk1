@@ -30,8 +30,9 @@ for filename in os.listdir(path):
                 if firstLine:
                     firstLine = False
                 else:
+                    print(f"'{exch}', '{row[0]}', '{row[1]}', {row[2]}, {row[3]}, {row[4]}, {row[5]}, {row[6]}")
                     cursor.execute(
-                        f"INSERT INTO stocks.dbo.stk_price_hist VALUES('{exch}', '{row[0]}', '{row[1]}', {row[2]}, {row[3]}, {row[4]}, {row[5]}, {row[6]})")
+                        f"INSERT INTO stocks.dbo.stk_price VALUES('{exch}', '{row[0]}', '{row[1]}', {row[2]}, {row[3]}, {row[4]}, {row[5]}, {row[6]})")
                     rows += 1
 
         cursor.commit()
