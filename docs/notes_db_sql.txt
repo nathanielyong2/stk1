@@ -6,4 +6,3 @@ where data1.stk1=data2.stk2
 and vol2 > 10000000
 and stk2 in ('MSFT', 'AAPL', 'TSLA')
 order by 4 desc;
-

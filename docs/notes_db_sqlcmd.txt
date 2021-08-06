@@ -1,0 +1,49 @@
+--tutorial on https://www.sqlshack.com/working-sql-server-command-line-sqlcmd/
+--see MS docs in https://docs.microsoft.com/en-us/sql/tools/sqlcmd-utility?view=sql-server-ver15#command-line-options
+
+sqlcmd 
+sqlcmd -S localhost  <--this will connect to sqlserver 2019 - instance/service =MSSQLSERVER
+--note : sqlcmd -S localhost\MSSQLSERVER does not work with error 87 - ???
+
+------------------------------------------
+select db_name()
+select name from sys.databases
+sp_databases
+select @@servername   <-- will return your computer server name
+select @@servicename  <-- will return MSSQLSERVER
+--Note : you can also view servers in SQL server configuration manager utility
+
+-------------------------------------------
+
+
+--------------------------------------------------------------------------------------
+sqlcmd -S localhost\sqlexpress  <-- note : must use forward slash and not backslash
+--note : must use forward slash for it to work. localhost/sqlexpress will not work
+--note : this connects to sqlserver 2017 (and not 2019) which was installed previously
+-------------------------------------------------
+
+
+SELECT SERVERPROPERTY('COLLATION')
+--SQL_Latin1_General_CP1_CI_AS  => CI=case insensitive
+
+sp_helpsort
+--Latin1-General, case-insensitive, accent-sensitive, kanatype-insensitive, width-insensitive for Unicode Data, SQL Server Sort Order 52 on Code Page 1252 for non-Unicode Data
+
+SELECT SERVERPROPERTY('EDITION')
+--Developer Edition (64-bit)
+
+SELECT SERVERPROPERTY('IsIntegratedSecurityOnly')
+GO
+-- 1 <= Only Windows authentication is enabled. 0 means both types of auth is enabled
+
+:listvar
+-- to show all variables set
+
+sqlcmd -S localhost/sqlexpress -E
+sqlcmd -S localhost/sqlexpress -E -i /work/stk1/db/test1.sql -o /work/stk1/db.test1.log
+
+--Command line options : https://docs.microsoft.com/en-us/sql/tools/sqlcmd-utility?view=sql-server-ver15#command-line-options
+-- -i=input | -o=output -e=use trusted connection instead of user/pass
+-- -d= set dabasename
+
+--BAckup database
