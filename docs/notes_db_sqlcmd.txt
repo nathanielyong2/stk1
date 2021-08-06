@@ -39,11 +39,16 @@ GO
 :listvar
 -- to show all variables set
 
-sqlcmd -S localhost
-sqlcmd -S localhost -i c:/work/stk1/db/test1.sql -o c:/work/stk1/db.test1.log
+---------------------------------------------------------------------------------------------
+--Writing to external log file
+
+sqlcmd -S localhost -i "/work/stk1/db/test1.sql" -o "/work/stk1/db.test1.log"
 
 --Command line options : https://docs.microsoft.com/en-us/sql/tools/sqlcmd-utility?view=sql-server-ver15#command-line-options
 -- -i=input | -o=output -e=use trusted connection instead of user/pass
 -- -d= set dabasename
 
---BAckup database
+---------------------------------------------------------------------------------------------
+--Accepting variables in sqlcmd command line
+
+

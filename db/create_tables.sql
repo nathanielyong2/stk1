@@ -1,5 +1,5 @@
-print 'Set database'
-use stocks
+print 'Use database $(SQLSERVER_DBNAME)'
+use $(SQLSERVER_DBNAME)
 
 
 print 'Start : Create new tables'
