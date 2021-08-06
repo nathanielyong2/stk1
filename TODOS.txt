@@ -1,25 +1,15 @@
 ---------------------------------------------------------------
 TODAY
------------------
-
-- Get sqlcmd to connect to database and run sql scripts - Andrew
-- Load csv files for NYSE zip file                      - Nate
-- Get eoddata zip file for TSX                          - Andrew
-- Use log to text file during load of stk data files    - Nate
-
----------------
-- Study Udemy course on visualizing Python data
-
-
 ---------------------------------------------------------------
-PREVIOUS - DONE
------------------
 
-- Load exch table - AMEX, NASDAQ, NYSE and TSX
-    NASDAQ      NASDAQ Stock Exchange	    USD
-    NYSE	    New York Stock Exchange	    USD
-    TSX	        Toronto Stock Exchange	    CAD
-    AMEX	    American Stock Exchange	    USD
-    
-- Create foreign key constraint between exch and stk tables on column "exch"
-- Set all table columns to "NOT NULL"
+
+- work on r_data_load.bat & r_data_delete.bat to automate data loading  - Nate
+
+- Stock data visualization - Python - Bokeh & Matplotlib  <- 10 megaproject course
+- Stock data visualization - React front end + Flask REST api backend  <-- Udemy course
+- Stock website - testing & CI/CD & deploy to Heroku/Azure  
+
+----------------------------------------------
+
+- Get eoddata zip file for TSX  - Andrew
+
