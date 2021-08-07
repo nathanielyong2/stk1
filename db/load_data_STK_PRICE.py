@@ -33,14 +33,15 @@ for filename in os.listdir(path):
                 if firstLine:
                     firstLine = False
                 else:
-                    print(f'Current line : {current_file_linenum}')
+                    # print(f'Current line : {current_file_linenum}')
                     cursor.execute(
                         f"INSERT INTO stocks.dbo.stk_price VALUES('{exch}', '{row[0]}', '{row[1]}', {row[2]}, {row[3]}, {row[4]}, {row[5]}, {row[6]})")
                     rows += 1
 
         cursor.commit()
+        print(f'End : Loaded {current_file_linenum} rows for file {filename}')
     else:
         print(f'Error! : Invalid file : {filename}')
 
-    print(f'End : Loaded {rows} rows for file {filename}')
+print(f'End : Total rows loaded = {rows}')
 
