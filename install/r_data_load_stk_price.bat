@@ -1,2 +1,1 @@
-CD "C:/work/stk1/db" 
-python load_data_STK_PRICE.py
+python /work/stk1/db/load_data_STK_PRICE.py

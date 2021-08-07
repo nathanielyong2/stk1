@@ -3,13 +3,15 @@ TODAY
 ---------------------------------------------------------------
 
 
-- work on r_data_load.bat & r_data_delete.bat to automate data loading  - Nate
+- work on r_data_load.bat & 
+- work on r_data_delete.bat to clear data from exch & stk_price tables  - Nate
+
+---------------------------------------------
 
 - Stock data visualization - Python - Bokeh & Matplotlib  <- 10 megaproject course
 - Stock data visualization - React front end + Flask REST api backend  <-- Udemy course
 - Stock website - testing & CI/CD & deploy to Heroku/Azure  
 
 ----------------------------------------------
-
 - Get eoddata zip file for TSX  - Andrew
 
