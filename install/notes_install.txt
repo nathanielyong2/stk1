@@ -1,0 +1,14 @@
+Windows batch scripts to create and manage sql server database.
+
+1. To install database "STOCKS" in sqlserver, run r_install_db.bat. 
+This will
+    - create database STOCKS
+    - create tables
+    - load the data into the tables. 
+
+2. To uninstall/delete database STOCKS, run r_drop_database.bat
+
+3. r_delete_STK_PRICE.bat is provided if you want to clear all the data from the stk_price table and reload
+
+4. To reload STK_PRICE table, run script r_load_stk_price. 
+Data files from eoddata.com have to be unzipped into the /work/stk1_data directory.

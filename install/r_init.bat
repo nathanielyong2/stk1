@@ -1,5 +1,5 @@
 @echo off
-
+echo ++++ Init
 echo Windows Datetime = %date%_%time%
 
 set v_hour=%time:~0,2%

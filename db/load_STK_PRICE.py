@@ -43,5 +43,5 @@ for filename in os.listdir(path):
     else:
         print(f'Error! : Invalid file : {filename}')
 
-print(f'End : Total rows loaded = {rows}')
+print(f'==> Total rows loaded = {rows}')
 
