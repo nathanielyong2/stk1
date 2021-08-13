@@ -4,7 +4,6 @@ import pyodbc
 import socket
 
 rows = 0
-current_file_linenum = 0
 
 server_name = 'Server=' + socket.gethostname() + ';'
 connect_string = 'Driver={SQL Server};' + server_name + 'Database=stocks;' + 'Trusted_Connection=yes;'
@@ -18,6 +17,8 @@ path = os.path.abspath(os.path.join(basedir, '../..', 'stk1_data'))
 for filename in os.listdir(path):
     file = os.path.join(path, filename)
     print(f'Start : {filename}')
+    
+    current_file_linenum = 0
 
     if os.path.isfile(file):
         stk_filename = os.path.splitext(filename)[0]
@@ -27,22 +28,16 @@ for filename in os.listdir(path):
             csv_reader = csv.reader(csv_file, delimiter=',')
             next(csv_reader)
             
-            current_file_linenum = 0
-            stk_values = []
-
-            for row in csv_reader:
-                current_file_linenum += 1
-                # print(f'Current line : {current_file_linenum}')
-                
-                stk_info = (row[0], row[1], row[2], row[3], row[4], row[5], row[6])
-                stk_values.append(stk_info)
+            stk_rows = list(csv_reader)
                 
             cursor.executemany(
-                        f"INSERT INTO stocks.dbo.stk_price VALUES('{exch}', ?, ?, ?, ?, ?, ?, ?)", stk_values)
+                        f"INSERT INTO stocks.dbo.stk_price VALUES('{exch}', ?, ?, ?, ?, ?, ?, ?)", [tuple(row) for row in stk_rows])
             connection.commit()
             
-        print(f'End : Loaded {current_file_linenum} rows for file {filename}')
+        current_file_linenum = len(stk_rows)    
         rows += current_file_linenum
+        
+        print(f'End : Loaded {current_file_linenum} rows for file {filename}')
     else:
         print(f'Error! : Invalid file : {filename}')
 
