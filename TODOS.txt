@@ -3,17 +3,23 @@ TODAY
 ---------------------------------------------------------------
 
 ---------------------------------------------
---DATA
+--NATE
+---------------------------------------------
 
 - clone stk1_data
-- enhance loading of prices - handle file type and test with new stk1_data_load directory & load for 2021 & 2020 - Nate
-- load the symbol listings - tab delimited file - Nate
--
+- create new directory stk1_data_load for use in loading data into database
 
+- load stk symbols - remove load_stk.sql & replace it with a Python script to load tab delimited data (from stk_data_load directory)
+- load stk prices  - enhance loading of prices - handle file types of TXT and CSV (ignore others)
+- load from stk1_data_load directory the prices for NASDAQ & NYSE (2021 & 2020)
+
+- WebApp -  REST - API - create a web page similar to https://finance.yahoo.com/quote/MSFT/?p=MSFT to display stock price for a single symbol (like MSFT) with a search bar to retrieve other stock symbols.
+- MobileApp - use React Native
 
 
 ---------------------------------------------
---Visualization
+--ANDREW - analysis & visualization
+---------------------------------------------
 
 
 - Stock data visualization - Python - Bokeh & Matplotlib  <- 10 megaproject course
