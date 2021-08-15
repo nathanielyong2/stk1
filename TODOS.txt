@@ -2,16 +2,22 @@
 TODAY
 ---------------------------------------------------------------
 
+---------------------------------------------
+--DATA
 
-- work on r_data_load.bat & 
-- work on r_data_delete.bat to clear data from exch & stk_price tables  - Nate
+- clone stk1_data
+- enhance loading of prices - handle file type and test with new stk1_data_load directory & load for 2021 & 2020 - Nate
+- load the symbol listings - tab delimited file - Nate
+-
+
+
 
 ---------------------------------------------
+--Visualization
+
 
 - Stock data visualization - Python - Bokeh & Matplotlib  <- 10 megaproject course
 - Stock data visualization - React front end + Flask REST api backend  <-- Udemy course
 - Stock website - testing & CI/CD & deploy to Heroku/Azure  
 
-----------------------------------------------
-- Get eoddata zip file for TSX  - Andrew
 

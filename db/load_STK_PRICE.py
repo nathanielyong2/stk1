@@ -9,10 +9,10 @@ server_name = 'Server=' + socket.gethostname() + ';'
 connect_string = 'Driver={SQL Server};' + server_name + 'Database=stocks;' + 'Trusted_Connection=yes;'
 connection = pyodbc.connect(connect_string)
 cursor = connection.cursor()
-print('Connection set...')
+print('Connection set using connect string : ', connect_string)
 
 basedir = os.path.abspath(os.path.dirname(__file__))
-path = os.path.abspath(os.path.join(basedir, '../..', 'stk1_data'))
+path = os.path.abspath(os.path.join(basedir, '../..', 'stk1_data_load/DATA_PRICES'))
 
 for filename in os.listdir(path):
     file = os.path.join(path, filename)
@@ -31,7 +31,7 @@ for filename in os.listdir(path):
             stk_rows = list(csv_reader)
                 
             cursor.executemany(
-                        f"INSERT INTO stocks.dbo.stk_price VALUES('{exch}', ?, ?, ?, ?, ?, ?, ?)", [tuple(row) for row in stk_rows])
+                        f"INSERT INTO stk_price VALUES('{exch}', ?, ?, ?, ?, ?, ?, ?)", [tuple(row) for row in stk_rows])
             connection.commit()
             
         current_file_linenum = len(stk_rows)    
