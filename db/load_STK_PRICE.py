@@ -12,7 +12,7 @@ cursor = connection.cursor()
 print('Connection set using connect string : ', connect_string)
 
 basedir = os.path.abspath(os.path.dirname(__file__))
-path = os.path.abspath(os.path.join(basedir, '../..', 'stk1_data_load'))
+path = os.path.abspath(os.path.join(basedir, '../..', 'stk1_data'))
 
 for filename in os.listdir(path):
     file = os.path.join(path, filename)
