@@ -1,0 +1,26 @@
+Download - https://www.sqlite.org/download.html
+	donwload the file sqlite-tools-win32-x86-3370100.zip and unzip into a directory.
+Tutorial - https://www.sqlitetutorial.net/sqlite-commands/
+
+
+----------Python script to connect to sqlite ------------------
+
+import sqlite3
+from sqlite3 import Error
+
+
+def create_connection(db_file):
+    """ create a database connection to a SQLite database """
+    conn = None
+    try:
+        conn = sqlite3.connect(db_file)
+        print(sqlite3.version)
+    except Error as e:
+        print(e)
+    finally:
+        if conn:
+            conn.close()
+
+
+if __name__ == '__main__':
+    create_connection(r"C:\Work\stk1\db_sqlite\zzz1.db")

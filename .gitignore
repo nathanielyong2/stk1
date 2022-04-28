@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Custom - ignore specific files or directories
+db_sqlite/stkdb
