@@ -13,7 +13,7 @@ CREATE TABLE exch (
 print '     --> Table created'
 print '     --> Create table STK'
 CREATE TABLE stk (
-	exch varchar(20) not null,
+	exch varchar(20) NOT NULL,
 	stk varchar(10) NOT NULL,
 	stk_name varchar(200) NOT NULL,
 	CONSTRAINT stk_pk PRIMARY KEY (exch, stk),

@@ -12,7 +12,7 @@ cursor = connection.cursor()
 print('Connection set using connect string : ', connect_string)
 
 basedir = os.path.abspath(os.path.dirname(__file__))
-path = os.path.abspath(os.path.join(basedir, '../..', 'stk1_data_load/DATA_PRICES'))
+path = os.path.abspath(os.path.join(basedir, '../..', 'stk1_data_load'))
 
 for filename in os.listdir(path):
     file = os.path.join(path, filename)
@@ -21,8 +21,7 @@ for filename in os.listdir(path):
     current_file_linenum = 0
 
     if os.path.isfile(file):
-        stk_filename = os.path.splitext(filename)[0]
-        exch = stk_filename.split('_')[0]
+        exch = filename.split('_')[0]
 
         with open(f'{file}', mode='r') as csv_file:
             csv_reader = csv.reader(csv_file, delimiter=',')
